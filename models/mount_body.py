@@ -1,10 +1,11 @@
 
 
-body = ['   Ö', '   Ö\n   |', '  \.Ö\n    |','  \.Ö./\n    |', '  \.Ö./\n    |\n  ./', '  \.Ö./\n    |\n  ./ \.']
+body = ['   Ö', '   Ö\n|         |', ' \.Ö\n|         |',' \.Ö./\n|         |',
+        ' \.Ö./\n|         |\n|       ./', ' \.Ö./\n|         |\n|       ./ \.']
 body_erros = ['']
 
 
-def mount_body(erros) -> str:
+def mount_body(erros: int) -> str:
     if 0 < erros < 2:
         body_erros[0] = body[erros-1]
     if 1 < erros < 3:
@@ -17,5 +18,4 @@ def mount_body(erros) -> str:
         body_erros[0] = body[erros-1]
     if 5 < erros < 7:
         body_erros[0] = (body[erros-1])
-    for item in body_erros:
-        print(item, end='')
+    return str(body_erros[0])
