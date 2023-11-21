@@ -38,4 +38,5 @@ while erros < 6:
           f"\n|         ")
 
     print("#################")
-
+print(f'A palavra sorteada foi: {sorteada}')
+print(f'Os seus acertos foram:  {letters_hit}', end='')
