@@ -1,4 +1,8 @@
 import random
+from time import sleep
+from unicodedata import normalize
+
+import forca
 
 
 def gerar_palvra():
@@ -13,8 +17,34 @@ def gerar_palvra():
     return palavra_sorteada
 
 
+def remove_acentos(palavra_sorteada):
+    return normalize('NFKD', palavra_sorteada).encode('ASCII', 'ignore').decode('ASCII')
+
+
 def checar_letra(chute):
-    if chute in '[A-Z]':
-        print(chute)
-    else:
-        print(f'Caractere inválido: {chute}')
+    while not chute.isalpha() or len(chute) > 1:
+        print('Chute inválido! Tente novamente!')
+        sleep(1)
+        chute = str(input('\nEscolha uma letra: ')).upper()
+
+
+def venceu_perdeu(sorteada, letters_hit, erros):
+    sao_iguais = ''
+    for letter in letters_hit:
+        sao_iguais += letter
+        if sao_iguais == sorteada:
+            print('Você venceu! :)\nParabéns!')
+            jogar_novamente()
+        if erros == 6:
+            print(f'Não foi dessa vez :(, tente novamente!\nA palavra sorteada foi: {sorteada}')
+            jogar_novamente()
+
+
+def jogar_novamente():
+    decisao = str(input('1 - Jogar Novamente!\n'
+                        '2 - Desistir!\n = '))
+    while decisao:
+        if decisao == 1 or decisao == '1':
+            forca.game()
+        else:
+            exit()
