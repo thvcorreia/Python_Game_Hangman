@@ -1,7 +1,10 @@
 import models.words as mw
 import models.mount_body as mmb
+import tkinter
 import os
 import utils.helper as uh
+
+# janela = tkinter.Tk()
 
 
 def main() -> None:
@@ -9,6 +12,7 @@ def main() -> None:
 
 
 def game() -> None:
+
     print('Bem vindo!\n'
           'Esse é o jogo da forca, você consegue acertar a palavra?')
     erros = 0
@@ -35,10 +39,10 @@ def game() -> None:
                         letters_hit[index] = chute
                         erros = erros
             else:
-                print(f'Não tem essa letra :( {chute}')
+                print(f'\033[1;30;31mNão tem essa letra :( {chute}\033[m')
                 erros += 1
         else:
-            print('Letra já usada, escolha outra')
+            print('\033[1;30;31mLetra já usada, escolha outra\033[m')
         print(f"\n\n/----------"
               f"\n|         |"
               f"\n|      {mmb.mount_body(erros)}"
@@ -51,3 +55,7 @@ def game() -> None:
 
 if __name__ == '__main__':
     main()
+
+# botao = tkinter.Button(janela, text='Enviar', command=main)
+# botao.pack(padx=10, pady=10)
+# janela.mainloop()
