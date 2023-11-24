@@ -1,10 +1,15 @@
 import models.words as mw
 import models.mount_body as mmb
+import pygame
 import tkinter
 import os
 import utils.helper as uh
 
-# janela = tkinter.Tk()
+# Configurações
+'''pygame.init()
+pygame.display.set_caption('Game Forca Pt-Br')
+largura, altura = 800, 600
+tela = pygame.display.set_mode((largura, altura))'''
 
 
 def main() -> None:
@@ -12,7 +17,7 @@ def main() -> None:
 
 
 def game() -> None:
-
+    '''tela.fill((0, 0, 0))'''
     print('Bem vindo!\n'
           'Esse é o jogo da forca, você consegue acertar a palavra?')
     erros = 0
@@ -56,6 +61,15 @@ def game() -> None:
 if __name__ == '__main__':
     main()
 
-# botao = tkinter.Button(janela, text='Enviar', command=main)
-# botao.pack(padx=10, pady=10)
-# janela.mainloop()
+
+"""janela = tkinter.Tk()
+janela.geometry('800x400')
+janela.title('Game da Forca - Cuidado para não se enforcar')
+saudacao = tkinter.Label(janela, text='Vamos jogar? Duvido acerta a palavra.')
+saudacao.grid(column=0, row=0, pady=20, padx=300)
+botao = tkinter.Button(janela, text='Jogar', command=main)
+botao.grid(column=0, row=1, pady=10)
+game_forca = tkinter.Label(janela, command=main)
+# game_forca = tkinter.BaseWidget(janela, main())
+game_forca.grid(column=0, row=2, pady=10)
+janela.mainloop()"""
