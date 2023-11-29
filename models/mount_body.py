@@ -2,6 +2,7 @@
 
 body = ['   Ö', '   Ö\n|         |', ' \.Ö\n|         |', ' \.Ö./\n|         |',
         ' \.Ö./\n|         |\n|       ./', ' \.Ö./\n|         |\n|       ./ \.']
+body_img = [open(file=R'media\images.jpeg'), ]
 body_erros = ['']
 
 
@@ -19,3 +20,5 @@ def mount_body(erros: int) -> str:
     if 5 < erros < 7:
         body_erros[0] = (body[erros-1])
     return str(body_erros[0])
+
+print(body_img)
