@@ -1,7 +1,7 @@
 import random
 from time import sleep
 from unicodedata import normalize
-import forca
+import pygame
 
 
 def gerar_palvra():
@@ -49,6 +49,6 @@ def jogar_novamente():
                         '2 - Desistir!\n = '))
     while decisao:
         if decisao == 1 or decisao == '1':
-            forca.game()
+            running = True
         else:
             exit()
